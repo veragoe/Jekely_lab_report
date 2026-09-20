@@ -1,6 +1,6 @@
 ---
 title: "Lab Rotation Report"
-author: "Your Name"
+author: "Vera Götz"
 date: "`r Sys.Date()`"
 output:
   pdf_document:
@@ -14,10 +14,10 @@ output:
 
 ## Buffers and Solutions
 
-| Buffer/Solution | Composition | Concentration | Storage | Reference/Notes |
-|------------------|--------------|----------------|---------|------------------|
-|                  |              |                |         |                  |
-|                  |              |                |         |                  |
+| Name                      | Composition                         |
+|---------------------------|-------------------------------------|
+| Cryopreservation solution | 5% Me2SO (v/v), 0.1% sucrose (w/v)  |
+|                           |                                     |
 
 ## Tools and Devices
 
