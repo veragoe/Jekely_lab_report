@@ -1,0 +1,31 @@
+---
+title: "Lab Rotation Report"
+author: "Your Name"
+date: "`r Sys.Date()`"
+output:
+  pdf_document:
+    toc: true
+    number_sections: true
+---
+
+# Introduction
+
+# Materials and Methods
+
+## Buffers and Solutions
+
+| Buffer/Solution | Composition | Concentration | Storage | Reference/Notes |
+|------------------|--------------|----------------|---------|------------------|
+|                  |              |                |         |                  |
+|                  |              |                |         |                  |
+
+## Tools and Devices
+
+| Tool/Device | Manufacturer | Model | Purpose |
+|-------------|--------------|-------|---------|
+|             |              |       |         |
+|             |              |       |         |
+
+# Results
+
+# Discussion
