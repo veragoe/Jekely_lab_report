@@ -8,23 +8,41 @@ output:
     number_sections: true
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(kableExtra)
+```
+
 # Introduction
 
 # Materials and Methods
 
 ## Buffers and Solutions
 
-| Name                      | Composition                         |
-|---------------------------|-------------------------------------|
-| Cryopreservation solution | 5% Me2SO (v/v), 0.1% sucrose (w/v)  |
-|                           |                                     |
+```{r buffers-table}
+buffers <- data.frame(
+  Name = c("Cryopreservation solution"),
+  Composition = c("5% Me2SO (v/v), 0.1% sucrose (w/v)")
+)
+
+kable(buffers, booktabs = TRUE) %>%
+  kable_styling(full_width = TRUE)
+```
 
 ## Tools and Devices
 
-| Tool/Device | Manufacturer | Model | Purpose |
-|-------------|--------------|-------|---------|
-|             |              |       |         |
-|             |              |       |         |
+```{r tools-table}
+tools <- data.frame(
+  `Tool/Device` = c("", ""),
+  Manufacturer = c("", ""),
+  Model = c("", ""),
+  Purpose = c("", ""),
+  check.names = FALSE
+)
+
+kable(tools, booktabs = TRUE) %>%
+  kable_styling(full_width = TRUE)
+```
 
 # Results
 
