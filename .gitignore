@@ -2,3 +2,11 @@
 .Rhistory
 .RData
 .Ruserdata
+
+# Files generated automatically when knitting to PDF
+*.tex
+*.log
+*.aux
+*.out
+*.toc
+*.synctex.gz
