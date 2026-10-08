@@ -25,9 +25,9 @@ library(kableExtra)
 
 ```{r reagents-table}
 reagents <- data.frame(
-  Name = c(""),
-  'Article Number' = c(""),
-  Company = c(""),
+  Name = c("D(+)-Saccharose", "Dimethyl sulfoxide"),
+  'Article Number' = c("4621.1", "34869-500ML"),
+  Company = c("Carl ROTH", "Sigma-Aldrich"),
   check.names = FALSE
 )
 
@@ -55,9 +55,9 @@ kable(buffers, booktabs = TRUE) %>%
 
 ```{r tools-table}
 tools <- data.frame(
-  `Tool/Device` = c("High Pressure Freezer", "Automatic Freeze Substitution System", "MicroCT", "Ultramicrotome"),
-  Model = c("HPM 010", "EM AFS II", "SkyScan 1272", "EM UC7" ),
-  Company = c("BAL-TEC", "Leica", "Bruker", "Leica"),
+  `Tool/Device` = c("High Pressure Freezer", "Automatic Freeze Substitution System", "MicroCT", "Ultramicrotome", "Pipette controller", "Syringe (1 ml)", "Tube Assemblies for Pipettes", "Microcapillary tubes/Microcaps®"),
+  Model = c("HPM 010", "EM AFS II", "SkyScan 1272", "EM UC7", "micro-classic", "Omnifix® 40 Solo", "A5177-5EA", "P1924-1PAK" ),
+  Company = c("BAL-TEC", "Leica", "Bruker", "Leica","BRAND", "B. Braun SE", "Merck", "Drummond"),
   check.names = FALSE
 )
 
