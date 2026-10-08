@@ -3,6 +3,8 @@ title: "Lab Rotation Report"
 author: "Vera Götz"
 date: "`r Sys.Date()`"
 mainfont: "Calibri"
+header-includes:
+  - \renewcommand{\arraystretch}{1.5}
 output:
   pdf_document:
     toc: true
