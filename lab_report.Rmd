@@ -25,7 +25,8 @@ library(kableExtra)
 reagents <- data.frame(
   Name = c(""),
   'Article Number' = c(""),
-  Company = c("")
+  Company = c(""),
+  check.names = FALSE
 )
 
 kable(reagents, booktabs = TRUE) %>%
