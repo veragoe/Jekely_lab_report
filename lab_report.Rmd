@@ -2,10 +2,12 @@
 title: "Lab Rotation Report"
 author: "Vera Götz"
 date: "`r Sys.Date()`"
+mainfont: "Calibri"
 output:
   pdf_document:
     toc: true
     number_sections: true
+    latex_engine: xelatex
 ---
 
 ```{r setup, include=FALSE}
