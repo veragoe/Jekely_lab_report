@@ -79,7 +79,7 @@ antibodies <- data.frame(
 
 kable(antibodies, booktabs = TRUE) %>%
   kable_styling(full_width = TRUE) %>%
-  column_spec(1:4, width = "4cm")
+  column_spec(1:4, width = "3.7cm")
 
 ```
 
