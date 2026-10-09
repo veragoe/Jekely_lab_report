@@ -56,7 +56,7 @@ kable(buffers, booktabs = TRUE) %>%
 ```{r tools-table}
 tools <- data.frame(
   `Tool/Device` = c("High Pressure Freezer", "Automatic Freeze Substitution System", "MicroCT", "Ultramicrotome", "Pipette controller", "Syringe (1mL)", "Tube Assemblies for Pipettes", "Microcapillary tubes/Microcaps®", "Cell Strainer (40µm)", "Screw Top Microcentrifuge Tubes (2mL)", "Modeling wax"),
-  Model = c("HPM 010", "EM AFS II", "SkyScan 1272", "EM UC7", "micro-classic", "Omnifix® 40 Solo", "A5177-5EA", "P1924-1PAK", "431750", "HS10060"),
+  Model = c("HPM 010", "EM AFS II", "SkyScan 1272", "EM UC7", "micro-classic", "Omnifix® 40 Solo", "A5177-5EA", "P1924-1PAK", "431750", "HS10060", ""),
   Company = c("BAL-TEC", "Leica", "Bruker", "Leica","BRAND", "B. Braun SE", "Merck", "Drummond", "Corning", "Sallinger GmbH (MORSA)"),
   check.names = FALSE
 )
