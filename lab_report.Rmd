@@ -4,6 +4,8 @@ subtitle: "Exploring an Alternative Cryofixation Method for Electron Microscopy 
 author: "Vera Götz"
 date: "`r Sys.Date()`"
 mainfont: "Calibri"
+fontsize: 11pt
+linestretch: 1.5
 header-includes:
   - \renewcommand{\arraystretch}{1.5}
 output:
