@@ -74,9 +74,6 @@ kable(tools, booktabs = TRUE) %>%
 ### Programs 
 
 **Freeze Substitution**
-
-\vspace{-10pt}
-
 ```{r programs-table}
 AFSprogram <- data.frame(
   'Start Temperature (°C)' = c("-90", "-90", "-60", "-60", "-30", "-30", "0", "0", "-30", "-30", "-10", "10", "20"),
@@ -92,8 +89,6 @@ kable(AFSprogram, booktabs = TRUE, align = "cccc") %>%
 ```
 
 **Cryopreservation Freezing**
-
-\vspace{-10pt}
 
 ```{r CPF-table, eval=FALSE}
 CPF <- data.frame(
@@ -112,10 +107,7 @@ kable(CPF, booktabs = TRUE, align = "cccc") %>%
 ### Antibodies
 
 **Primary Antibodies**
-
-\vspace{-10pt}
-
-```{r primary-antibodies-table}
+```{r primary-antibodies-table}                 
 P_antibodies <- data.frame(
   Antigen = c("α-tubulin", "α-serotonin"),
   'Raised in' = c("Mouse", "Rabbit"),
@@ -132,10 +124,7 @@ kable(P_antibodies, booktabs = TRUE) %>%
 ```
 
 **Secondary Antibodies**
-
-\vspace{-10pt}
-
-```{r secondary-antibodies-table}
+```{r secondary-antibodies-table}                 
 S_antibodies <- data.frame(
   'Raised in' = c("Goat", "Goat"),
   'Raised against' = c("Mouse", "Rabbit"),
