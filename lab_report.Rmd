@@ -46,7 +46,7 @@ kable(reagents, booktabs = TRUE) %>%
 
 ```{r buffers-table}
 buffers <- data.frame(
-  Name = c("Cryopreservation solution", "EPON A", "EPON B", "Resin, hard", "Resin, very hard", "Freeze substitution solution"),
+  Name = c("Cryoprotectant solution", "EPON A", "EPON B", "Resin, hard", "Resin, very hard", "Freeze substitution solution"),
   Composition = c("5% Me2SO (v/v), 0.1% sucrose (w/v) in artifical sea water", "18.6g Glycidether 100 (EPON 812) + 25g Glycidether Hardener DBA, ~3:4 (w/w)", "22.88g Glycidether 100 (EPON 812) + 20.69g Glycidether Hardener MNA, ~10:9 (w/w)", "3.33g EPON A + 8.61g EPON B + 150µl Glycidether Accelerator DMP-30", "12.3g EPON B + 150µl Glycidether Accelerator DMP-30", "1% (w/v) OsO4, 0.5% (v/v) uranyl acetate (Stock: 20% (w/v) in MeOH) and 3% (v/v) water in acetone")
 )
 
@@ -106,16 +106,36 @@ kable(CPF, booktabs = TRUE, align = "cccc") %>%
 
 ### Antibodies
 
-```{r antibodies-table}                 
-antibodies <- data.frame(
-  Name = c("α-Tubulin", "Serotonin", "Cy5 (anti alpha tubulin)", "TrypC"),
-  Host = c("Mouse", "Rabbit", "", ""),
-  Company = c("Sigma-Aldrich", "Sigma-Aldrich", "", ""),
-  Dilution = c("1:400", "1:400", "", ""),
+**Primary Antibodies**
+```{r primary-antibodies-table}                 
+P_antibodies <- data.frame(
+  Antigen = c("α-tubulin", "α-serotonin"),
+  'Raised in' = c("Mouse", "Rabbit"),
+  Company = c("Sigma-Aldrich (MERCK)", "Sigma-Aldrich (MERCK)"),
+  'Product Number' = c("T6793", "S5545"),
+  Dilution = c("1:400", "1:400"),
   check.names = FALSE
 )
 
-kable(antibodies, booktabs = TRUE) %>%
+kable(P_antibodies, booktabs = TRUE) %>%
+  kable_styling(full_width = TRUE) %>%
+  column_spec(1:5, width = "2.5cm")
+
+```
+
+**Secondary Antibodies**
+```{r secondary-antibodies-table}                 
+S_antibodies <- data.frame(
+  'Raised in' = c("Goat", "Goat"),
+  'Raised against' = c("Mouse", "Rabbit"),
+  'Conjugated fluorochrome' = c("CY5", "TRITC"),
+  Company = c("Jackson ImmunoResearch", "Sigma-Aldrich (MERCK)"),
+  'Product Number' = c("115-175-146 ", "T6778"),
+  Dilution = c("1:400", "1:400"),
+  check.names = FALSE
+)
+
+kable(S_antibodies, booktabs = TRUE) %>%
   kable_styling(full_width = TRUE) %>%
   column_spec(1:4, width = "3.7cm")
 
@@ -125,12 +145,14 @@ kable(antibodies, booktabs = TRUE) %>%
 
 
 ### _Platynereis dumerilii_ husbandry 
-_Platynereis dumerilii_ cultures were maintained in artificial seawater at 20 °C by Emily Savage. For spawning, mature adults were transferred into beakers, where the larvae were subsequently developed at 4 °C. (CHECK TEMPERATURES)
+_Platynereis dumerilii_ cultures were maintained in artificial seawater at 18°C by Emily Savage. For spawning, mature adults were transferred into beakers, where the larvae were subsequently incubated at 18°C, respectivly. 
 
 ### Treatment with Cryopreservation Agents 
 Prior to freezing, larvae were treated with a cryoprotectant solution containing 5% DMSO and 0.1% sucrose in artificial seawater. Larvae were incubated for at least 1 h before being transferred into microcapillary tubes or Eppendorf tubes for freezing.
 
-### Freezing using the AFS machine
+### Cryopreservation Freezing using the AFS machine
+
+
 
 ### High-Pressure Freezing
 
