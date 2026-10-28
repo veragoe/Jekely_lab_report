@@ -7,7 +7,7 @@ mainfont: "Calibri"
 fontsize: 11pt
 linestretch: 1.5
 header-includes:
-  - \renewcommand{\arraystretch}{1.5}
+  - \renewcommand{\arraystretch}{1.2}
 output:
   pdf_document:
     toc: true
