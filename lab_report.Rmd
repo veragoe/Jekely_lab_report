@@ -145,16 +145,17 @@ kable(S_antibodies, booktabs = TRUE) %>%
 
 
 ### _Platynereis dumerilii_ husbandry 
-_Platynereis dumerilii_ cultures were maintained in artificial seawater at 18°C by Emily Savage. For spawning, mature adults were transferred into beakers, where the larvae were subsequently incubated at 18°C, respectivly. 
+_P.dumerilii_ cultures were maintained in filtered artificial seawater (FASW) at 18°C by Emily Savage. For spawning, mature adults were transferred pairwise into beakers, where the larvae were subsequently incubated at 18°C. 
 
 ### Treatment with Cryopreservation Agents 
-Prior to freezing, larvae were treated with a cryoprotectant solution containing 5% DMSO and 0.1% sucrose in artificial seawater. Larvae were incubated for at least 1 h before being transferred into microcapillary tubes or Eppendorf tubes for freezing.
+Prior to freezing, larvae were treated with a cryoprotectant solution containing 5% DMSO and 0.1% sucrose in FASW. Larvae were incubated for at least 1 h before being transferred into carriers, microcapillary tubes or Eppendorf tubes for freezing.
 
 ### Cryopreservation Freezing using the AFS machine
 
 
 
 ### High-Pressure Freezing
+High-Pressure Freezing, was conducted with 6dpf _P.dumerilii_ larvae either in sea water or 
 
 ### Automated Freeze Substitution 
 
@@ -165,5 +166,58 @@ Prior to freezing, larvae were treated with a cryoprotectant solution containing
 ### Image analysis
 
 # Results
+
+```{r temp-plot, fig.width=9, fig.height=5}
+library(readxl)
+library(tidyr)
+library(ggplot2)
+library(dplyr)
+
+temp_data <- read_excel("data/quantification_AFS_slope.xlsx", sheet = "run1+run2")
+
+temp_data <- temp_data %>%
+  rowwise() %>%
+  mutate(
+    afs_sd = sd(c(AFS_temp_run1, AFS_temp_run2)),
+    measured_sd = sd(c(measured_temp_1_run1, measured_temp_2_run1, measured_temp_1_run2, measured_temp_2_run2))
+  ) %>%
+  ungroup()
+
+sd_afs <- round(mean(temp_data$afs_sd, na.rm = TRUE), 2)
+sd_measured <- round(mean(temp_data$measured_sd, na.rm = TRUE), 2)
+
+temp_long <- pivot_longer(
+  temp_data,
+  cols = c(AFS_temp_mean, measured_temp_mean),
+  names_to = "device",
+  values_to = "temperature"
+)
+
+slopes <- temp_long %>%
+  group_by(device) %>%
+  summarize(slope = coef(lm(temperature ~ `time (min)`))[2])
+
+slope_afs <- round(slopes$slope[slopes$device == "AFS_temp_mean"], 2)
+slope_measured <- round(slopes$slope[slopes$device == "measured_temp_mean"], 2)
+
+label_afs <- paste0("AFS Machine (", slope_afs, " °C/min, SD = ", sd_afs, " °C, n=2)")
+label_measured <- paste0("Thermometer (", slope_measured, " °C/min, SD = ", sd_measured, " °C, n=4)")
+
+ggplot(temp_long, aes(x = `time (min)`, y = temperature, color = device, linetype = device)) +
+  geom_line(linewidth = 1) +
+  scale_color_manual(
+    values = c("AFS_temp_mean" = "black", "measured_temp_mean" = "lightblue"),
+    labels = c(label_afs, label_measured)
+  ) +
+  scale_linetype_manual(
+    values = c("AFS_temp_mean" = "dashed", "measured_temp_mean" = "solid"),
+    labels = c(label_afs, label_measured)
+  ) +
+  labs(x = "Time (min)", y = "Temperature (°C)", color = "Device", linetype = "Device") +
+  theme_classic(base_size = 13) +
+  theme(legend.position = "bottom", legend.title = element_blank())
+```
+
+
 
 # Discussion
